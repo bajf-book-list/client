@@ -2,20 +2,36 @@
 <html>
   <head>
     <title>My Cool Full Stack App</title>
+    <script id="book-list-template" type="text/x-handlebars-template">
+      <div class="each-book">
+        <img src="{{image_url}}">
+        <ul>
+          <li>{{title}}</li>
+          <li>{{author}}</li>
+        </ul>
+      </div>
+    </script>
   </head>
   <body>
     <main>
       <form id="user-form">
-        <input type="text" id="name" placeholder="name" required>
-        <input type="text" id="age" placeholder="age" required>
-        <input type="text" id="ninja" placeholder="are you a ninja" required>
+        <input type="text" id="title" placeholder="Title" required>
+        <input type="text" id="author" placeholder="Author" required>
+        <input type="text" id="image_url" placeholder="image_url" required>
+        <input type="text" id="isbn" placeholder="ISBN" required>
         <button type="submit">Add User</button>
       </form>
+      <section id="book-container"></section>
+      <section id="about-us">
+        <p> ABOUT US Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa fugit aperiam ad voluptatibus exercitationem ex voluptates quod minus facere tenetur dolorum saepe, quibusdam veniam voluptatum recusandae odit quas. Sapiente, esse.</p>
+      </section>
 
-      <section id="results"></section>
     </main>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+    <script src="scripts/models/book.js"></script>
+    <script src="scripts/views/book-view.js"></script>
+    <script src="scripts/views/error-view.js"></script>
   </body>
 </html>
