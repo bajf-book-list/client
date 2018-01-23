@@ -2,6 +2,15 @@
 <html>
   <head>
     <title>My Cool Full Stack App</title>
+    <script id="book-list-template" type="text/x-handlebars-template">
+      <div class="each-book">
+        <img src="{{image_url}}">
+        <ul>
+          <li>{{title}}</li>
+          <li>{{author}}</li>
+        </ul>
+      </div>
+    </script>
   </head>
   <body>
     <main>
