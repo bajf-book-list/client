@@ -1,4 +1,5 @@
 'use strict';
+
 // var _CLIENT_URL = 'https://bajf-book-list.github.io/client' 
 var __API_URL__ = 'https://bajf-book-list.herokuapp.com'
 
@@ -25,9 +26,10 @@ var __API_URL__ = 'https://bajf-book-list.herokuapp.com'
     e.preventDefault();
 
     let data = {
-        name: e.target.name.value,
-        age: e.target.age.value,
-        ninja: e.target.ninja.value
+        title: e.target.title.value,
+        author: e.target.author.value,
+        image_url: e.target.image_url.value,
+        isbn: e.target.isbn.value
     }
 
     $.post(`${__API_URL__}/api/v1/books`, data)
@@ -48,9 +50,11 @@ var __API_URL__ = 'https://bajf-book-list.herokuapp.com'
 
         data.rows.forEach(function(item) {
         let content = `
-            <h2>name: ${item.name}</h2>
-            <p>age: ${item.age}</p>
-            <p>ninja status: ${item.ninja}</p>
+            <h2>title: ${item.title}</h2>
+            <p>age: ${item.author}</p>
+            <p>image_url: ${item.image_url}</p>
+            <p>isbn: ${item.isbn}</p>
+            <p>description: ${item.description}</p>
         `;
         $('#results').append(content);
         });
