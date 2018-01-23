@@ -7,13 +7,13 @@ var __API_URL__ = 'https://bajf-book-list.herokuapp.com'
 
     pageLoad();
 
-    Book.prototype.toHtml = function() {
-        var template = Handlebars.compile($('#book-list-template').text());
+    // Book.prototype.toHtml = function() {
+    //     var template = Handlebars.compile($('#book-list-template').text());
 
-        // put stuff here!!!
+    //     // put stuff here!!!
 
-        return template(this);
-    }
+    //     return template(this);
+    // }
 
 
 
