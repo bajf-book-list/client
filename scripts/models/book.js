@@ -3,7 +3,7 @@
 // var _CLIENT_URL = 'https://bajf-book-list.github.io/client' 
 var __API_URL__ = 'https://bajf-book-list.herokuapp.com'
 
-(function(module) {
+// (function(module) {
 
     pageLoad();
 
@@ -63,4 +63,4 @@ var __API_URL__ = 'https://bajf-book-list.herokuapp.com'
     });
     }
 
-})(window)
+// })(window)
