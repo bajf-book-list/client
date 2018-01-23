@@ -16,6 +16,10 @@ $('#user-form').on('submit', function(e) {
   $.post(`${__API_URL__}/db/person`, data)
   .then(function() {
     pageLoad();
+  })
+  .catch(function(err) {
+    console.error(err);
+    pageLoad();
   });
 });
 
