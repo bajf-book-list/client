@@ -13,14 +13,18 @@ $('#user-form').on('submit', function(e) {
     ninja: e.target.ninja.value
   }
 
-  $.post(`${__API_URL__}/db/person`, data)
+  $.post(`${__API_URL__}/api/v1/books`, data)
   .then(function() {
+    pageLoad();
+  })
+  .catch(function(err) {
+    console.error(err);
     pageLoad();
   });
 });
 
 function pageLoad() {
-  $.get(`${__API_URL__}/db/person`)
+  $.get(`${__API_URL__}/api/v1/books`)
   .then(function(data) {
     console.log('our data:', data);
     $('#results').empty();
