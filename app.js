@@ -1,5 +1,5 @@
 'use strict';
-
+// var _CLIENT_URL = 'github url here!!!!!!!! 
 var __API_URL__ = 'https://bajf-book-list.herokuapp.com'
 
 pageLoad();
