@@ -1,0 +1,26 @@
+div.each-book {
+    position: relative;
+    margin: 10px;
+}
+
+div.each-book img {
+    width: 100%;
+}
+
+div.each-book ul {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    background-color: #444;
+    padding: 5px;
+}
+
+#user-form {
+    display:none;
+}
+
+#about-us {
+    display: none;
+}

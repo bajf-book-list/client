@@ -1,0 +1,24 @@
+header {
+    background-color: #444;
+    width: 100%;
+    color: #fff;
+}
+
+header img {
+    display: inline-block;
+}
+
+header h1 {
+    display: inline-block;
+}
+
+footer {
+    background-color: #444;
+    width: 100%;
+    color: #fff;
+    height: 100px;
+}
+
+footer p {
+    text-align: right;
+}
