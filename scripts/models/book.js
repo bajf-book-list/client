@@ -1,7 +1,8 @@
 'use strict';
 
 // var _CLIENT_URL = 'https://bajf-book-list.github.io/client' 
-var __API_URL__ = 'https://bajf-book-list.herokuapp.com'
+// for production: var __API_URL__ = 'https://bajf-book-list.herokuapp.com'
+var __API_URL__ = ''
 
 // (function(module) {
 
