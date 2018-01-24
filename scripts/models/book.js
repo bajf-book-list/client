@@ -1,12 +1,11 @@
 'use strict';
 
-// var _CLIENT_URL = 'https://bajf-book-list.github.io/client' 
-var __API_URL__ = 'https://bajf-book-list.herokuapp.com' // for production
-// var __API_URL__ = '' // for test environment
+var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
+// var __API_URL__ = ''; // for test environment
 
 (function(module) {
 
-    function Book(title, author, image_url,isbn) {
+    function Book(title, author, image_url, isbn) {
         this.title = title;
         this.author = author;
         this.image_url = image_url;
@@ -43,7 +42,7 @@ var __API_URL__ = 'https://bajf-book-list.herokuapp.com' // for production
 
 pageLoad();
     
-$('#user-form').on('submit', function(e) {
+$('#book-form').on('submit', function(e) {
     e.preventDefault();
 
     let data = {
