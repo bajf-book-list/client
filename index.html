@@ -49,7 +49,9 @@
     <script src="scripts/views/book-view.js"></script>
     <script src="scripts/views/error-view.js"></script>
     <script>
-        window.Book.fetchAll(window.bookView.initIndexPage);
+        $(function() {
+          window.Book.fetchAll(window.bookView.initIndexPage);
+        });
       </script>
   </body>
 </html>
