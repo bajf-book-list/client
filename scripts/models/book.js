@@ -23,9 +23,7 @@ var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
     };
 
     Book.loadAll = rows => {
-        rows.sort((a, b) => (b.title) - (a.title))
-    
-        Book.all = rows.map((bookObject) => new Book(bookObject));
+        Book.all = rows.sort((a, b) => a.title - b.title).map((bookObject) => new Book(bookObject));
     
     };
 
