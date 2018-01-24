@@ -12,10 +12,5 @@
         $('#error-message').append(template(err));
     };
 
-    function errorCallback(err) {
-        console.error(err);
-        errorView.initErrorPage();
-    }
-
     module.errorView = errorView;
 })(window);

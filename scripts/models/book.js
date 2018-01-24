@@ -35,6 +35,11 @@ var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
         .catch(errorCallback);
     };
 
+    function errorCallback(err) {
+        console.error(err);
+        window.errorView.initErrorPage();
+    };
+
     module.Book = Book;
 })(window);
 
