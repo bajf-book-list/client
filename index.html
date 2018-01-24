@@ -23,6 +23,7 @@
       <h1>books app</h1>
     </header>
     <main>
+      <section>Book Count: </section>
       <form id="book-form">
         <input type="text" id="title" placeholder="Title" required>
         <input type="text" id="author" placeholder="Author" required>
@@ -32,24 +33,7 @@
         <button type="submit">Add Book!</button>
       </form>
       <section id="results"></section>
-      <section id="book-container">
-          <div class="each-book">
-            <img src="http://placehold.it/800x600">
-            <ul>
-              <li>Title</li>
-              <li>Author</li>
-            </ul>
-          </div>
-
-          <div class="each-book">
-            <img src="http://placehold.it/800x600">
-            <ul>
-              <li>Title</li>
-              <li>Author</li>
-            </ul>
-          </div>
-
-      </section>
+      <section id="book-list"></section>
       <section id="about-us">
         <p> ABOUT US Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa fugit aperiam ad voluptatibus exercitationem ex voluptates quod minus facere tenetur dolorum saepe, quibusdam veniam voluptatum recusandae odit quas. Sapiente, esse.</p>
       </section>
@@ -64,5 +48,8 @@
     <script src="scripts/models/book.js"></script>
     <script src="scripts/views/book-view.js"></script>
     <script src="scripts/views/error-view.js"></script>
+    <script>
+        window.Book.fetchAll(window.bookView.initIndexPage);
+      </script>
   </body>
 </html>
