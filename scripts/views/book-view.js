@@ -1,6 +1,7 @@
 'use strict';
-(function(module){
+
+(function(module) {
 
 
     
-})(window)
+})(window);
