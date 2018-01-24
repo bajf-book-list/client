@@ -1,13 +1,13 @@
-div.each-book {
+div.book-view {
     position: relative;
     margin: 10px;
 }
 
-div.each-book img {
+div.book-view img {
     width: 100%;
 }
 
-div.each-book ul {
+div.book-view ul {
     position: absolute;
     left: 0px;
     right: 0px;
