@@ -1,15 +1,16 @@
 'use strict';
 
-var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
-// var __API_URL__ = ''; // for test environment
+// var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
+var __API_URL__ = ''; // for test environment
 
 (function(module) {
 
-    function Book(title, author, image_url, isbn) {
+    function Book(title, author, image_url, isbn, description) {
         this.title = title;
         this.author = author;
         this.image_url = image_url;
         this.isbn = isbn;
+        this.description = description;
     };
 
     Book.all = [];
@@ -23,15 +24,17 @@ var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
     };
 
     Book.loadAll = rows => {
-        Book.all = rows.map(bookObject => new Book(bookObject));
+        console.log('rows.rows:', rows.rows);
+        Book.all = rows.rows.map(bookObject => new Book(bookObject.title, bookObject.author, bookObject.image_url, bookObject.isbn, bookObject.description));
+        console.log('Book.all:', Book.all);
     };
 
     Book.fetchAll = callback => {
     $.get(`${__API_URL__}/api/v1/books`)
         .then(results => {
+        console.log('results:', results);
         Book.loadAll(results);
-        callback();
-        })
+        }).then(callback)
         .catch(errorCallback);
     };
 
@@ -69,7 +72,6 @@ $('#book-form').on('submit', function(e) {
 function pageLoad() {
 $.get(`${__API_URL__}/api/v1/books`)
 .then(function(data) {
-    console.log('our data:', data);
     $('#results').empty();
 
     data.rows.forEach(function(item) {

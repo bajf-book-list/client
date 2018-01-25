@@ -6,7 +6,7 @@
 
     bookView.initIndexPage = function() {
         $('.container').hide();
-        $('.book-view').show();
+        $('#book-view').show();
         window.Book.all.forEach(a => $('#book-list').append(a.toHtml()));
     };
 
