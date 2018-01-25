@@ -38,7 +38,7 @@ var __API_URL__ = ''; // for test environment
         .catch(errorCallback);
     };
 
-    Book.fetchOne = callback => {
+    Book.fetchOne = (ctx, next) => {
         $.ajax({
             url: '/api/v1/books/:id', 
             method: 'GET',
@@ -46,6 +46,7 @@ var __API_URL__ = ''; // for test environment
                 console.log('success: ',data);
             }
         });
+        next();
     };
 
     $('#book-form').on('submit', function(e) {
@@ -77,3 +78,10 @@ var __API_URL__ = ''; // for test environment
 
     module.Book = Book;
 })(window);
+
+
+// $('#new-book').on('click', function(e) {
+//     e.preventDefault();
+
+
+// });

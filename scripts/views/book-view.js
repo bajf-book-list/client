@@ -20,11 +20,12 @@
         $('#book-list').hide();
     };
 
-    bookView.initDetailView = function() {
+    bookView.initDetailView = function(ctx, next) {
         $('#detail-vew').show();
         $('#form-view').hide();
         $('#about-us').hide();
         $('#book-list').hide();
+        next();
     };
 
     module.bookView = bookView;
