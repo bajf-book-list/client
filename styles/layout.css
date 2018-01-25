@@ -5,6 +5,12 @@ header {
 }
 
 header img {
+    margin-right: 5px;
+    float: left;
+}
+
+header h1 {
+    margin-top: 5px;
     float: left;
 }
 
