@@ -38,6 +38,40 @@ var __API_URL__ = ''; // for test environment
         .catch(errorCallback);
     };
 
+    Book.fetchOne = callback => {
+        $.ajax({
+            url: '/api/v1/books/:id', 
+            method: 'GET',
+            success: function(data, message) {
+                console.log('success: ',data);
+            }
+        });
+    };
+
+    Book.create = function(callback) {
+        $('#book-form').on('submit', function(e) {
+            e.preventDefault();
+        
+            let data = {
+                title: e.target.title.value,
+                author: e.target.author.value,
+                image_url: e.target.image_url.value,
+                isbn: e.target.isbn.value,
+                description: e.target.description.value
+            }
+        
+            $.post(`${__API_URL__}/api/v1/books`, data)
+            .then(function() {
+                console.log('single book create data: ', data);
+                //we need to point this somewhere!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            })
+            .catch(function(err) {
+                console.error(err);
+                pageLoad();
+            });
+        });   
+    };
+
     function errorCallback(err) {
         console.error(err);
         window.errorView.initErrorPage();
@@ -47,27 +81,6 @@ var __API_URL__ = ''; // for test environment
 })(window);
 
 pageLoad();
-    
-$('#book-form').on('submit', function(e) {
-    e.preventDefault();
-
-    let data = {
-        title: e.target.title.value,
-        author: e.target.author.value,
-        image_url: e.target.image_url.value,
-        isbn: e.target.isbn.value,
-        description: e.target.description.value
-    }
-
-    $.post(`${__API_URL__}/api/v1/books`, data)
-    .then(function() {
-        pageLoad();
-    })
-    .catch(function(err) {
-        console.error(err);
-        pageLoad();
-    });
-});
 
 function pageLoad() {
 $.get(`${__API_URL__}/api/v1/books`)

@@ -5,9 +5,9 @@
     let bookView = {};
 
     bookView.initIndexPage = function() {
-        $('.container').hide();
+        $('.container').show();
         $('#book-view').show();
-        window.Book.all.forEach(a => $('#book-list').append(a.toHtml()));
+        module.Book.all.forEach(a => $('#book-list').append(a.toHtml()));
     };
 
     module.bookView = bookView;
