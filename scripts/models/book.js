@@ -1,7 +1,7 @@
 'use strict';
 
-// var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
-var __API_URL__ = ''; // for test environment
+var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
+// var __API_URL__ = ''; // for test environment
 
 (function(module) {
 
