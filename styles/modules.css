@@ -23,11 +23,12 @@ div.book-view ul {
 
 .icon-menu {
     font-size: 3em;
-    float: right;
+    text-align: right;
 }
 
 .main-nav {
     padding: 0.1em;
+    display:block;
 }
 
 .main-nav ul {
