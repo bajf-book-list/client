@@ -1,3 +1,6 @@
 'use strict';
 
-page('/api/v1/books/:id', window.Book.fetchOne);
+page('/', window.bookView.initIndexPage);
+page('/books/:book_id', window.bookView.initDetailView);
+page('/books/new', window.bookView.initFormView);
+page();

@@ -48,29 +48,27 @@ var __API_URL__ = ''; // for test environment
         });
     };
 
-    Book.create = function(callback) {
-        $('#book-form').on('submit', function(e) {
-            e.preventDefault();
-        
-            let data = {
-                title: e.target.title.value,
-                author: e.target.author.value,
-                image_url: e.target.image_url.value,
-                isbn: e.target.isbn.value,
-                description: e.target.description.value
-            }
-        
-            $.post(`${__API_URL__}/api/v1/books`, data)
-            .then(function() {
-                console.log('single book create data: ', data);
-                //we need to point this somewhere!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            })
-            .catch(function(err) {
-                console.error(err);
-                pageLoad();
-            });
-        });   
-    };
+    $('#book-form').on('submit', function(e) {
+        e.preventDefault();
+    
+        let data = {
+            title: e.target.title.value,
+            author: e.target.author.value,
+            image_url: e.target.image_url.value,
+            isbn: e.target.isbn.value,
+            description: e.target.description.value
+        }
+    
+        $.post(`${__API_URL__}/api/v1/books`, data)
+        .then(function() {
+            console.log('single book create data: ', data);
+            window.bookView.initIndexPage();
+        })
+        .catch(function(err) {
+            console.error(err);
+            window.bookView.initIndexPage();
+        });
+    });   
 
     function errorCallback(err) {
         console.error(err);
@@ -79,25 +77,3 @@ var __API_URL__ = ''; // for test environment
 
     module.Book = Book;
 })(window);
-
-pageLoad();
-
-function pageLoad() {
-$.get(`${__API_URL__}/api/v1/books`)
-.then(function(data) {
-    $('#results').empty();
-
-    data.rows.forEach(function(item) {
-    let content = `
-        <h2>title: ${item.title}</h2>
-        <p>age: ${item.author}</p>
-        <p>image_url: ${item.image_url}</p>
-        <p>isbn: ${item.isbn}</p>
-        <p>description: ${item.description}</p>
-    `;
-    $('#results').append(content);
-    });
-},  function(err) {
-    console.error(err);
-    });
-};

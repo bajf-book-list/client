@@ -24,31 +24,49 @@
     <header>
       <img src="http://placehold.it/50x50">
       <h1>books app</h1>
+      <nav class="main-nav">
+          <div class="icon-menu"></div>
+          <ul>
+            <li class="tab" data-content="articles"><a href="/" class="icon-home"> Home</a></li>
+            <li class="tab" data-content="about"><a href="/books/new" class="icon-address-book"> About</a></li>
+          </ul>
+        </nav>
     </header>
     <main>
-      <section>Book Count: </section>
-      <section id="form-view">
-        <form id="book-form">
-          <input type="text" id="title" placeholder="Title" required>
-          <input type="text" id="author" placeholder="Author" required>
-          <input type="text" id="image_url" placeholder="Image URL" required>
-          <input type="text" id="isbn" placeholder="ISBN" required>
-          <textarea id="description" form="book-form" placeholder="Description.." required></textarea>
-          <button type="submit">Add Book!</button>
-        </form>
-      </section>
+      <section id="count">Book Count: </section>
+      
       <section class="container">
-        <section id="book-list"></section>
+
+        <section id="form-view">
+          <form id="book-form">
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="text" id="author" placeholder="Author" required>
+            <input type="text" id="image_url" placeholder="Image URL" required>
+            <input type="text" id="isbn" placeholder="ISBN" required>
+            <textarea id="description" form="book-form" placeholder="Description.." required></textarea>
+            <button type="submit">Add Book!</button>
+          </form>
+        </section>
+
+        <section id="book-list">
+          
+        </section>
+
         <section id="error-message"></section>
+
         <section id="about-us">
           <p> ABOUT US Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa fugit aperiam ad voluptatibus exercitationem ex voluptates quod minus facere tenetur dolorum saepe, quibusdam veniam voluptatum recusandae odit quas. Sapiente, esse.</p>
         </section>
+        
         <section id="detail-view"></section>
+
       </section>  
     </main>
+
     <footer>
       <p>social icons</p>
     </footer>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
