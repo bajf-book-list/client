@@ -14,6 +14,7 @@
           <li>{{title}}</li>
           <li>{{author}}</li>
         </ul>
+        <button id="details-button">view details</button>
       </div>
     </script>
     <script id="error-template" type="text/x-handlebars-template">
@@ -27,8 +28,8 @@
       <nav class="main-nav">
         <div class="icon-menu"></div>
         <ul>
-          <li class="tab" data-content="articles"><a href="/" class="icon-home"> Home</a></li>
-          <li class="tab" data-content="about"><a href="/books/new" class="icon-address-book"> About</a></li>
+          <li class="tab" id="all-books"><a href="/" class="icon-home">View All Books</a></li>
+          <li class="tab" id="new-book"><a href="/books/new" class="icon-address-book"> Add A New Book</a></li>
         </ul>
       </nav>
     </header>
