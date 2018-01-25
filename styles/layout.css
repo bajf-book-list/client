@@ -5,11 +5,7 @@ header {
 }
 
 header img {
-    display: inline-block;
-}
-
-header h1 {
-    display: inline-block;
+    float: left;
 }
 
 footer {
