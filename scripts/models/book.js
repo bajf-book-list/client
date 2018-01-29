@@ -1,7 +1,7 @@
 'use strict';
 
-var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
-// var __API_URL__ = ''; // for test environment
+//var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
+ var __API_URL__ = ''; // for test environment
 
 (function(module) {
 
@@ -14,6 +14,7 @@ var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
     };
 
     Book.all = [];
+    Book.single = [];
 
     Book.prototype.toHtml = function() {
         var template = Handlebars.compile($('#book-list-template').text());
@@ -40,7 +41,7 @@ var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
 
     Book.fetchOne = (ctx, next) => {
         $.ajax({
-            url: '/api/v1/books/:id', 
+            url: '/api/v1/books/', 
             method: 'GET',
             success: function(data, message) {
                 console.log('success: ',data);
@@ -48,6 +49,12 @@ var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
         });
         next();
     };
+
+    Book.loadSingle = rows => {
+        console.log('rows.rows:', rows.rows);
+        Book.single = rows.rows.map(bookObject => new Book(bookObject.title, bookObject.author, bookObject.image_url, bookObject.isbn, bookObject.description));
+        console.log('Book.single:', Book.single);
+
 
     $('#book-form').on('submit', function(e) {
         e.preventDefault();
@@ -78,10 +85,3 @@ var __API_URL__ = 'https://bajf-book-list.herokuapp.com'; // for production
 
     module.Book = Book;
 })(window);
-
-
-// $('#new-book').on('click', function(e) {
-//     e.preventDefault();
-
-
-// });
